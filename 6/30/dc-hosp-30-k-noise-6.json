@@ -1,0 +1,39 @@
+{
+    "source" : {
+        "type" : "csv",
+        "file" : ["./noiselogs/6/30/hosp_30_k_noise_6.csv"]
+    },
+    "rule" : [
+        {
+			"name" : "FD1",
+            "type" : "fd",
+            "value" : ["ProviderNumber,|HospitalName,City,State,ZIPCode, CountryName ,PhoneNumber,HospitalType,HospitalOwner,EmergencyService"]
+        },
+        {
+			"name" : "FD2",
+            "type" : "fd",
+            "value" : ["ZIPCode,|City,State"]
+        },
+        {
+            "name" : "FD3",
+            "type" : "fd",
+            "value" : ["PhoneNumber,|ZIPCode, City, State"]
+        },
+        {
+            "name" : "FD4",
+            "type" : "fd",
+            "value" : ["MeasureCode,|MeasureName,Condition"]
+        },
+        {
+            "name" : "FD5",
+            "type" : "fd",
+            "value" : ["ProviderNumber,MeasureCode,|StateAvg"]
+        },
+        {
+            "name" : "FD6",
+            "type" : "fd",
+            "value" : ["State,MeasureCode,|StateAvg"]
+        }
+    ]
+}
+       

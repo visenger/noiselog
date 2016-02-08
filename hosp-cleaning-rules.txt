@@ -1,0 +1,27 @@
+cfd1:hosp
+ProviderNumber,|HospitalName,City,State,ZIPCode,CountyName,PhoneNumber,HospitalType,HospitalOwner,EmergencyService
+-,-,-,-,-,-,-,-,-,-,-,-,-
+
+cfd2:hosp 
+ZIPCode,|City,State
+-,-,-
+
+cfd3:hosp
+PhoneNumber,|ZIPCode, City, State
+-,-,-,-,-,-,-
+
+cfd4:hosp
+MeasureCode,|MeasureName,Condition
+-,-,-
+
+cfd5:hosp
+ProviderNumber,MeasureCode,|StateAvg
+-,-,-
+
+cfd6:hosp
+State,MeasureCode,|StateAvg
+-,-,-
+
+md1:hosp,zipcode
+(ZIPCode) == (ZIPCode)
+(State) = (State)
